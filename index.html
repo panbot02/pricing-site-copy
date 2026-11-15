@@ -1,110 +1,267 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>订阅价格表 · 质保说明</title>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>订阅价格表 · ChatGPT / Grok · 质保说明</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="ChatGPT Plus / Pro 与 Grok 订阅价格表，两档质保可选，支持开具发票，教师学生教育优惠。">
 <style>
-:root{--bg:#f6f7fb;--card:#fff;--tx:#1b1f2a;--mu:#5c6476;--ac:#4f46e5;--ac2:#10b981;--bd:#e4e7ef}
-[data-t=dark]{--bg:#0f1220;--card:#181c2e;--tx:#e8eaf2;--mu:#9aa2b8;--bd:#2a3047}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
-.w{max-width:1080px;margin:auto;padding:0 16px}header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--bd);z-index:5}
-header .w{display:flex;justify-content:space-between;align-items:center;height:56px}nav a{color:var(--mu);margin-left:14px;text-decoration:none;font-size:14px}
-@media(max-width:640px){nav a.h{display:none}}
-button{cursor:pointer;font:inherit}.tg{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:8px;padding:4px 10px;margin-left:10px}
-.hero{text-align:center;padding:56px 0 32px}.hero h1{font-size:clamp(26px,6vw,42px);margin:0 0 12px}.hero p{color:var(--mu);margin:4px 0}
-.pill{display:inline-block;background:var(--card);border:1px solid var(--bd);border-radius:99px;padding:4px 12px;margin:4px;font-size:13px}
-.btn{display:inline-block;background:var(--ac);color:#fff;border:0;border-radius:10px;padding:10px 20px;text-decoration:none;margin-top:16px}
-section{padding:32px 0}h2{text-align:center;font-size:26px;margin:0 0 20px}
-.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:12px}.tabs button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:99px;padding:8px 18px}
-.tabs button.on{background:var(--ac);color:#fff;border-color:var(--ac)}.desc{text-align:center;color:var(--mu);font-size:14px;margin-bottom:20px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.c{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:22px}.c.hot{border:2px solid var(--ac)}
-.c h3{margin:0}.pr{font-size:36px;font-weight:700;margin:10px 0 0}.pr small{font-size:15px;color:var(--mu)}.inv{color:var(--mu);font-size:14px}
-.c ul{padding-left:18px;color:var(--mu);font-size:14px}table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:14px}
-th,td{border-bottom:1px solid var(--bd);padding:10px;text-align:center}.tw{overflow-x:auto}
-.steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.steps .c:before{counter-increment:s;content:counter(s);display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--ac);color:#fff;text-align:center;line-height:28px;margin-bottom:8px}
-details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:10px}summary{font-weight:600;cursor:pointer}details p{color:var(--mu);margin:8px 0 0}
-.ct{text-align:center;background:linear-gradient(135deg,var(--ac),#7c3aed);color:#fff;border-radius:20px;padding:32px 16px}.ct .wx{font-size:30px;font-weight:700;letter-spacing:1px}
-.ct button{background:#fff;color:var(--ac);border:0;border-radius:10px;padding:10px 22px;margin-top:10px}
-footer{text-align:center;color:var(--mu);font-size:13px;padding:24px 0 40px}
-</style><style id="ux">
-html{scroll-behavior:smooth}
-.c{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;will-change:transform}
-.c:hover{transform:translateY(-6px);box-shadow:0 18px 40px -12px rgba(79,70,229,.45);border-color:var(--ac)!important}
-#price .c{position:relative;overflow:hidden}
-#price .c::before{content:"";position:absolute;inset:-2px;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(99,102,241,.18),transparent 40%);opacity:0;transition:opacity .3s;pointer-events:none}
-#price .c:hover::before{opacity:1}
-#price .c .pr{transition:transform .25s ease,color .25s}
-#price .c:hover .pr{transform:scale(1.08);transform-origin:left;color:var(--ac)}
-.btn,#cp{transition:transform .15s ease,box-shadow .2s ease,filter .2s}
-.btn:hover,#cp:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(79,70,229,.6);filter:brightness(1.08)}
-.btn:active,#cp:active{transform:translateY(0) scale(.97)}
-#highlights>div>div{transition:transform .25s ease,box-shadow .25s}
-#highlights>div>div:hover{transform:translateY(-4px);box-shadow:0 14px 30px -12px rgba(0,0,0,.35)}
-#fb .fbc:not(.masked){transition:transform .25s ease,box-shadow .25s}
-#fb .fbc:not(.masked):hover{transform:translateY(-4px);box-shadow:0 16px 36px -14px rgba(0,0,0,.35)}
-#fb .fbc img{transition:transform .4s ease}
-#fb .fbc:not(.masked):hover img{transform:scale(1.02)}
-details{transition:background .2s}
-details summary{cursor:pointer;transition:color .2s}
-details summary:hover{color:var(--ac)}
-table tr{transition:background .15s}
-table tr:hover td{background:rgba(99,102,241,.08)}
-nav a,header a{transition:color .2s}
-nav a:hover,header a:hover{color:var(--ac)}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media (hover:none){.c:hover,#highlights>div>div:hover,#fb .fbc:hover{transform:none}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
+:root{--bg:#f5f5f7;--sec:#fff;--card:#fff;--tx:#1d1d1f;--mu:#6e6e73;--soft:#86868b;--ac:#0071e3;--ac2:#4f46e5;--bd:#e5e5ea;--dark:#000;--dtx:#f5f5f7;--sh:0 2px 10px rgba(0,0,0,.05);--shh:0 18px 40px -14px rgba(0,0,0,.22);--hot:#bf4800}
+[data-t=dark]{--bg:#0b0b0f;--sec:#141418;--card:#1c1c22;--tx:#f5f5f7;--mu:#a1a1a6;--soft:#8e8e93;--ac:#2997ff;--bd:#2c2c34;--sh:0 2px 10px rgba(0,0,0,.4);--shh:0 18px 40px -14px rgba(0,0,0,.7);--hot:#ff9f0a}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;background:var(--bg);color:var(--tx);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--ac);text-decoration:none}button{cursor:pointer;font:inherit;color:inherit}
+.w{max-width:1120px;margin:auto;padding:0 22px}
+section,[id]{scroll-margin-top:64px}
+/* top bar */
+header{position:sticky;top:0;z-index:20;background:rgba(245,245,247,.78);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--bd)}
+[data-t=dark] header{background:rgba(11,11,15,.78)}
+header .w{display:flex;justify-content:space-between;align-items:center;height:52px}
+header b{font-size:15px;letter-spacing:.2px}
+nav{display:flex;align-items:center}nav a{color:var(--mu);margin-left:18px;font-size:13px;transition:color .2s}nav a:hover{color:var(--tx)}
+.tg{border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:3px 10px;margin-left:16px;font-size:14px}
+@media(max-width:720px){nav a.h{display:none}nav a{margin-left:12px}}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 85% -10%,rgba(255,159,10,.20),transparent 60%),radial-gradient(900px 500px at 0% 110%,rgba(79,70,229,.16),transparent 60%),linear-gradient(180deg,#fbf7f2,#f5f5f7);}
+[data-t=dark] .hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(255,159,10,.16),transparent 60%),radial-gradient(900px 500px at 0% 110%,rgba(79,70,229,.25),transparent 60%),#0b0b0f}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-top:64px;padding-bottom:56px}
+.eyebrow{font-size:12px;letter-spacing:3px;color:var(--soft);text-transform:uppercase;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:28px;height:1px;background:currentColor}
+.badge{display:inline-block;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;font-weight:700;border-radius:999px;padding:6px 14px;font-size:14px;margin:14px 0 6px}
+.hero h1{font-size:clamp(34px,6.2vw,64px);line-height:1.08;margin:8px 0 14px;letter-spacing:-.5px}
+.hero h1 .g{background:linear-gradient(90deg,#ff8a00,#e5398b 55%,#6d5dfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mu);margin:4px 0;font-size:17px}
+.hero .from{display:flex;align-items:baseline;gap:6px;margin:22px 0 0;flex-wrap:wrap}.hero .from .n{font-size:40px;font-weight:700;letter-spacing:-1px}.hero .from small{color:var(--mu)}.hero .from{gap:8px 26px}.hero .fi{white-space:nowrap}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ac);color:#fff;border:0;border-radius:999px;padding:10px 22px;font-size:15px;font-weight:500;transition:transform .15s,filter .2s,box-shadow .2s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(0,113,227,.7)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ac);border:1px solid var(--ac)}.btn.ghost:hover{box-shadow:none;background:rgba(0,113,227,.06)}
+.btn.blk{background:#1d1d1f}[data-t=dark] .btn.blk{background:#f5f5f7;color:#000}
+.pills{margin-top:18px}.pill{display:inline-block;background:var(--card);border:1px solid var(--bd);border-radius:99px;padding:4px 12px;margin:4px 6px 0 0;font-size:13px;color:var(--mu)}
+.stage{position:relative;height:340px}
+.stage .arch{position:absolute;left:50%;top:0;transform:translateX(-50%);width:270px;height:340px;border-radius:135px 135px 24px 24px;background:linear-gradient(180deg,#ffd9b0,#ff9a5a);box-shadow:0 0 0 14px rgba(255,255,255,.55),0 30px 60px -20px rgba(255,120,40,.5)}
+[data-t=dark] .stage .arch{box-shadow:0 0 0 14px rgba(255,255,255,.06),0 30px 60px -20px rgba(255,120,40,.4)}
+.ticket{position:absolute;width:190px;padding:14px 16px;border-radius:16px;background:var(--card);box-shadow:var(--shh);font-size:13px;color:var(--mu);animation:fl 6s ease-in-out infinite}
+.ticket b{display:block;font-size:20px;color:var(--tx);margin-top:2px}.ticket i{font-style:normal;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.ticket.t1{left:2%;top:40px;transform:rotate(-6deg)}.ticket.t2{right:0;top:150px;animation-delay:-2s;transform:rotate(5deg)}.ticket.t3{left:12%;bottom:6px;animation-delay:-4s;transform:rotate(-2deg)}
+@keyframes fl{50%{translate:0 -10px}}
+@media(max-width:820px){.hero .w{grid-template-columns:1fr;padding-top:40px}.stage{height:260px}.stage .arch{width:210px;height:260px}.ticket{width:160px;padding:10px 12px}.ticket b{font-size:17px}}@media(max-width:560px){.stage{display:none}.hero .w{padding-bottom:36px}}
+/* product chip switcher */
+.pnav{background:var(--sec);border-bottom:1px solid var(--bd)}
+.chips{display:flex;justify-content:center;gap:10px;padding:20px 0 18px}
+.chip{display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:6px 14px;border-radius:16px;min-width:92px;transition:background .2s}
+.chip .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-weight:800;color:#fff;font-size:17px;box-shadow:inset 0 -3px 8px rgba(0,0,0,.18),0 6px 14px -6px rgba(0,0,0,.35);transition:transform .2s}
+.chip span.nm{font-size:13px;color:var(--mu)}
+.chip:hover .ic{transform:translateY(-3px)}.chip.on span.nm{color:var(--tx);font-weight:600}
+.chip.on{background:var(--bg)}.chip .bar{width:18px;height:3px;border-radius:3px;background:transparent}.chip.on .bar{background:var(--ac)}
+.seg{display:inline-flex;background:rgba(127,127,140,.14);border-radius:99px;padding:3px;gap:2px}
+.seg button{border:0;background:none;border-radius:99px;padding:7px 18px;font-size:14px;color:var(--mu);transition:all .25s}
+.seg button.on{background:var(--card);color:var(--tx);box-shadow:0 2px 8px rgba(0,0,0,.12);font-weight:600}
+/* monogram tiles */
+.mg-gpt{background:linear-gradient(145deg,#2ecc9a,#0d8a63)}.mg-grok{background:linear-gradient(145deg,#4b4b55,#0c0c10)}
+/* shelves */
+.shelf{padding:72px 0 56px}.shelf.alt{background:var(--sec)}
+.sh-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.st{font-size:clamp(26px,4.4vw,40px);line-height:1.15;margin:0;letter-spacing:-.3px;font-weight:700}.st .s{color:var(--soft)}
+.sh-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:15px}.sh-links a:after{content:" ›"}
+.panel{display:none}.panel.on{display:block;animation:pin .45s ease}
+@keyframes pin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.desc{color:var(--mu);font-size:14px;margin:14px 0 22px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.c{position:relative;background:var(--card);border:1px solid transparent;border-radius:22px;padding:24px 22px 22px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.c:hover{transform:translateY(-4px);box-shadow:var(--shh)}
+.pc{cursor:pointer}.pc.sel{border-color:var(--ac);box-shadow:0 0 0 3px rgba(0,113,227,.18),var(--shh)}
+.pc .art{height:120px;display:grid;place-items:center;margin-bottom:10px}
+.pc .art .tile{width:96px;height:96px;border-radius:28px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:22px;letter-spacing:.5px;box-shadow:inset 0 -6px 16px rgba(0,0,0,.25),inset 0 4px 10px rgba(255,255,255,.3),0 18px 30px -14px rgba(0,0,0,.5);transition:transform .35s}
+.pc .art .tile.sm{font-size:16px}.pc:hover .art .tile{transform:rotate(-6deg) scale(1.05)}
+.tag{font-size:12px;font-weight:700;color:var(--hot);min-height:18px}
+.fam{font-size:13px;color:var(--soft)}.c h3{margin:0;font-size:24px;letter-spacing:-.2px}
+.sub{color:var(--mu);font-size:14px;margin:4px 0 0;min-height:22px}
+.pr{font-size:34px;font-weight:700;margin:18px 0 0;letter-spacing:-.5px}.pr small{font-size:14px;color:var(--mu);font-weight:400;margin-left:2px}
+.inv{color:var(--mu);font-size:13px}.inv .k{display:inline-block;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;font-weight:700;border-radius:999px;padding:1px 8px;font-size:12px;margin-right:6px}
+.c hr{border:0;border-top:1px solid var(--bd);margin:16px 0 12px;width:100%}
+.ck{list-style:none;padding:0;margin:0 0 14px;font-size:14px;flex:1}.ck li{position:relative;padding-left:24px;margin:7px 0;color:var(--tx)}
+.ck li:before{content:"✓";position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:50%;background:var(--tx);color:var(--card);font-size:11px;font-weight:700;display:grid;place-items:center}
+.ck li.x{color:var(--mu)}.ck li.x:before{content:"–";background:var(--bd);color:var(--mu)}
+.ck li.bot:before{content:"★";background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff}
+.meta{font-size:12px;color:var(--soft);margin-bottom:12px}
+.c .btn{width:100%}.more{display:block;text-align:center;margin-top:10px;font-size:14px}.more:after{content:" ›"}
+.fine{text-align:center;color:var(--soft);font-size:13px;margin-top:22px}.fine a{margin-left:8px}
+sup a,sup{font-size:10px;color:var(--soft)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:18px;overflow:hidden;font-size:14px;box-shadow:var(--sh)}
+th,td{border-bottom:1px solid var(--bd);padding:12px 10px;text-align:center}th{background:rgba(127,127,140,.08)}tr:last-child td{border-bottom:0}
+tr:hover td{background:rgba(0,113,227,.05)}.tw{overflow-x:auto;margin-top:26px;border-radius:18px}
+h4.tt{margin:34px 0 0;font-size:20px}
+/* why grid */
+.why{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.why{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.why{grid-template-columns:1fr}}
+.why .c{padding:26px}.wi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.why h3{font-size:19px}.why p{color:var(--mu);font-size:14px;margin:8px 0 0}
+.why .hl1{border:2px solid #f59e0b;background:linear-gradient(180deg,rgba(245,158,11,.10),var(--card) 70%)}.why .hl2{border:2px solid #3b82f6;background:linear-gradient(180deg,rgba(59,130,246,.10),var(--card) 70%)}
+/* steps */
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.steps .c:before{counter-increment:s;content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:10px}
+.steps h3{font-size:17px}
+.pol ul{padding-left:18px;color:var(--mu);font-size:14px;margin:12px 0 0}.pol h3{font-size:19px}
+details{background:var(--card);border-radius:16px;padding:16px 18px;margin-bottom:10px;box-shadow:var(--sh)}summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--soft);font-weight:400;font-size:20px;line-height:1;transition:transform .25s}details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--mu);margin:10px 0 0;font-size:15px}
+/* feedback */
+#fb .fbg{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1000px;margin:20px auto 0;position:relative}@media(max-width:640px){#fb .fbg{grid-template-columns:1fr}}
+#fb .fbc{position:relative;overflow:hidden;padding:18px;border-radius:22px;background:var(--card);box-shadow:var(--sh)}#fb .fbc blockquote{margin:0 0 12px;font-size:16px;line-height:1.6}#fb .fbc img{width:100%;border-radius:14px;display:block}
+#fb .masked{max-height:420px}#fb .masked img,#fb .masked blockquote{filter:blur(.6px);opacity:.95}#fb .fbm{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,var(--sec) 100%)}
+/* contact (dark band) */
+.band{background:#000;color:var(--dtx);position:relative;overflow:hidden;text-align:center;padding:76px 0 84px}
+.band:before{content:"";position:absolute;left:50%;bottom:-260px;width:900px;height:520px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,159,10,.35),rgba(124,58,237,.22) 55%,transparent);pointer-events:none}
+.band .k{color:#ff9f0a;font-weight:700;font-size:14px}.band h2{font-size:clamp(28px,5vw,48px);margin:8px 0 6px}.band p{color:#a1a1a6;margin:0}
+.band .wx{font-size:clamp(30px,6vw,52px);font-weight:700;letter-spacing:1px;margin:18px 0 4px;position:relative}
+.band #cp{position:relative;background:var(--ac);color:#fff;border:0;border-radius:999px;padding:11px 26px;margin-top:10px;font-size:15px;transition:transform .15s,filter .2s}.band #cp:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.band #ok{font-size:13px;margin-top:8px;min-height:18px;color:#a1a1a6;position:relative}
+.band .picked{position:relative;display:inline-block;margin-top:16px;padding:6px 14px;border-radius:99px;background:rgba(255,255,255,.1);font-size:14px}
+/* dock */
+.dock{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);z-index:30;display:flex;align-items:center;gap:14px;background:rgba(29,29,31,.92);color:#fff;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:10px 10px 10px 20px;border-radius:999px;box-shadow:0 20px 40px -12px rgba(0,0,0,.5);visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;max-width:calc(100% - 24px)}
+.dock.on{transform:translate(-50%,0);visibility:visible}.dock .t{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dock .t b{font-size:17px;margin-left:6px}.dock .btn{padding:8px 16px;font-size:14px;white-space:nowrap}
+.dock .x{background:none;border:0;color:#a1a1a6;font-size:18px;padding:0 6px}
+/* footer */
+footer{background:var(--bg);color:var(--soft);font-size:12px;padding:30px 0 90px}footer ol{padding-left:18px;margin:0 0 14px}footer li{margin:4px 0}footer .ln{border-top:1px solid var(--bd);padding-top:14px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.in{opacity:1;transform:none}
+@media (hover:none){.c:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}.rv{opacity:1;transform:none}}
 </style>
 </head><body>
-<header><div class="w"><b>订阅价格表</b><div><nav><a class="h" href="#price">价格</a><a class="h" href="#cmp">对比</a><a class="h" href="#flow">流程</a><a href="#fb">反馈</a><a href="#faq">FAQ</a><a href="#contact">联系</a></nav></div><button class="tg" id="tg">🌓</button></div></header>
-<main class="w">
-<div class="hero"><div style="display:inline-block;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;font-weight:700;border-radius:999px;padding:6px 14px;font-size:14px;margin-bottom:10px">🧾 支持开具发票</div><h1>Plus / Pro 订阅 · 两档质保可选</h1><p>价格透明，按需选择质保方案</p><p><b style="color:#f59e0b">可开发票</b> · 可协助手机验证 · 售后按规则退款</p>
-<div><span class="pill">🎓 教育优惠 10 元起</span><span class="pill">订阅质保</span><span class="pill">封号质保</span><span class="pill">Plus · Pro100 5x · Pro200 10x</span></div><a class="btn" href="#contact">加微信咨询</a></div>
-<section id="highlights"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:900px;margin:8px auto 24px"><div style="margin:0;padding:20px 24px;border-radius:16px;border:2px solid #f59e0b;background:rgba(245,158,11,.08);text-align:center"><div style="font-size:22px;font-weight:800">🧾 全部套餐均可开票</div><p style="margin:8px 0 0;opacity:.85">需要发票报销的话，选对应套餐的「开票价」就行，下单时跟客服说明开票信息。</p></div><div style="margin:0;padding:20px 24px;border-radius:16px;border:2px solid #3b82f6;background:rgba(59,130,246,.08);text-align:center"><div style="font-size:22px;font-weight:800">🎓 教师 / 学生专享教育优惠</div><p style="margin:8px 0 0;opacity:.85">教师或学生身份下单可享教育优惠，<b style="color:#3b82f6">最少优惠 10 元起</b>。咨询时说明身份，客服按套餐确认具体优惠。</p></div></div></section>
-<section id="price"><h2>价格方案</h2>
-<div class="tabs"><button data-k="a" class="on">订阅质保</button><button data-k="b">封号质保</button></div>
-<div class="desc" id="desc"></div><div class="grid" id="cards"></div></section>
-<section id="cmp"><h2>两档质保对比</h2><div class="tw"><table><tr><th>套餐</th><th>订阅质保</th><th>封号质保</th></tr>
+<header><div class="w"><b>订阅价格表</b><div style="display:flex;align-items:center"><nav><a class="h" href="#price">价格</a><a class="h" href="#why">优势</a><a class="h" href="#flow">流程</a><a href="#fb">反馈</a><a href="#faq">FAQ</a><a href="#contact">联系</a></nav><button class="tg" id="tg" aria-label="切换深色/浅色">🌓</button></div></div></header>
+<main>
+<div class="hero"><div class="w">
+<div>
+<div class="eyebrow">ChatGPT · Grok 订阅</div>
+<div class="badge">🧾 支持开具发票</div>
+<h1>Plus / Pro 订阅<br><span class="g">两档质保可选</span></h1>
+<p>价格透明，按需选择质保方案</p><p><b style="color:#f59e0b">可开发票</b> · 可协助手机验证 · 售后按规则退款</p>
+<div class="from"><span class="fi"><small>ChatGPT Plus</small> <span class="n">¥160</span><small>起</small></span><span class="fi"><small>Grok Plus</small> <span class="n">¥80</span><small>起</small></span></div>
+<div class="cta"><a class="btn" href="#contact">加微信咨询</a><a class="btn ghost" href="#price">查看价格</a></div>
+<div class="pills"><span class="pill">🎓 教育优惠 10 元起</span><span class="pill">订阅质保</span><span class="pill">封号质保</span><span class="pill">Plus · Pro100 5x · Pro200 10x</span><span class="pill">Grok Plus · Premium · Super · Ultra</span></div>
+</div>
+<div class="stage" aria-hidden="true"><div class="arch"></div>
+<div class="ticket t1"><i>ChatGPT</i><b>Plus ¥160</b>订阅质保 · 开票价 170</div>
+<div class="ticket t2"><i>Grok · New</i><b>Premium ¥249</b>支持 Grok Bot</div>
+<div class="ticket t3"><i>Invoice</i><b>🧾 可开票</b>全部套餐均可开票</div>
+</div>
+</div></div>
+
+<div class="pnav" id="price"><div class="w"><div class="chips" role="tablist" aria-label="选择产品">
+<button class="chip on" data-p="gpt" role="tab"><span class="ic mg-gpt">GPT</span><span class="nm">ChatGPT</span><span class="bar"></span></button>
+<button class="chip" data-p="grok" role="tab"><span class="ic mg-grok">G</span><span class="nm">Grok · 新品</span><span class="bar"></span></button>
+</div></div></div>
+
+<section class="shelf" id="shelf"><div class="w">
+<!-- ChatGPT -->
+<div class="panel on" id="gpt" data-panel="gpt">
+<div class="sh-head"><h2 class="st">ChatGPT。<span class="s">两档质保，按需选择。</span></h2><div class="sh-links"><a href="#cmp">比较两档质保</a><a href="#policy">质保说明</a></div></div>
+<div class="tabs seg" role="tablist" aria-label="质保档位"><button data-k="a" class="on">订阅质保</button><button data-k="b">封号质保</button></div>
+<div class="desc" id="desc"></div><div class="grid" id="cards"></div>
+<p class="fine">全部套餐均可开票，需要发票请选「开票价」<sup>1</sup> · 教师 / 学生教育优惠最少 10 元起<sup>2</sup><a href="#contact">加微信咨询</a></p>
+<div id="cmp"><h4 class="tt">两档质保对比</h4><div class="tw"><table><tr><th>套餐</th><th>订阅质保</th><th>封号质保</th></tr>
 <tr><td>Plus</td><td>160（开票价 170）</td><td>200（开票价 210）</td></tr>
 <tr><td>Pro100 5x</td><td>799（开票价 859）</td><td>859（开票价 899）</td></tr>
 <tr><td>Pro200 10x</td><td>1459（开票价 1499）</td><td>1559（开票价 1599）</td></tr>
 <tr><td>掉订阅</td><td>✅ 质保退款</td><td>✅ 质保退款</td></tr>
 <tr><td>封号</td><td>❌ 不质保</td><td>✅ Plus 按天退款；Pro 按天的 1/3 退款</td></tr>
-<tr><td>手机验证</td><td>可帮忙过；出现二次验证可回收（按剩余天数退款）</td><td>可帮忙过；出现二次验证可回收（按剩余天数退款）</td></tr></table></div></section>
-<section id="flow"><h2>购买流程</h2><div class="steps">
+<tr><td>手机验证</td><td>可帮忙过；出现二次验证可回收（按剩余天数退款）</td><td>可帮忙过；出现二次验证可回收（按剩余天数退款）</td></tr></table></div></div>
+</div>
+<!-- Grok -->
+<div class="panel" id="grok" data-panel="grok">
+<div class="sh-head"><h2 class="st">Grok。<span class="s">四档订阅，人民币价格一目了然。</span></h2><div class="sh-links"><a href="#contact">咨询下单</a><a href="#faq">常见问题</a></div></div>
+<div class="desc">按官方月费档位提供，Premium 及以上档位支持 Grok Bot。具体质保与开票请咨询客服<sup>3</sup>。</div>
+<div class="grid" id="gcards"></div>
+<p class="fine">表中「官方 $」为官方月费档位，仅供对照；具体质保与开票请咨询客服<sup>3</sup><a href="#contact">加微信咨询</a></p>
+</div>
+</div></section>
+
+<section class="shelf alt" id="why"><div class="w">
+<div class="sh-head"><h2 class="st">为什么在这里买。<span class="s">价格透明，售后有规则。</span></h2></div>
+<div class="why">
+<div class="c hl1"><div class="wi" style="background:rgba(245,158,11,.15)">🧾</div><h3>全部套餐均可开票</h3><p>需要发票报销的话，选对应套餐的「开票价」就行，下单时跟客服说明开票信息。<sup>1</sup></p></div>
+<div class="c hl2"><div class="wi" style="background:rgba(59,130,246,.15)">🎓</div><h3>教师 / 学生专享教育优惠</h3><p>教师或学生身份下单可享教育优惠，<b style="color:#3b82f6">最少优惠 10 元起</b>。咨询时说明身份，客服按套餐确认具体优惠。<sup>2</sup></p></div>
+<div class="c"><div class="wi" style="background:rgba(16,185,129,.15)">🛡️</div><h3>两档质保可选</h3><p>ChatGPT 订阅质保只保掉订阅；封号质保掉订阅、封号都保，按规则退款。</p></div>
+<div class="c"><div class="wi" style="background:rgba(124,58,237,.15)">📱</div><h3>可协助手机验证</h3><p>可以帮忙过手机验证；出现手机号二次验证可以回收（按剩余天数退款）。</p></div>
+<div class="c"><div class="wi" style="background:rgba(236,72,153,.15)">💴</div><h3>价格透明</h3><p>每档价格与开票价都列在页面上，按确认的价格付款。</p></div>
+<div class="c"><div class="wi" style="background:rgba(0,113,227,.15)">💬</div><h3>微信一对一咨询</h3><p>微信 <span class="wxid">panplus5</span>，选套餐、质保档位、是否开票，拿不准都可以问。</p></div>
+</div></div></section>
+
+<section class="shelf" id="flow"><div class="w">
+<div class="sh-head"><h2 class="st">购买流程。<span class="s">五步完成。</span></h2></div>
+<div class="steps">
 <div class="c"><h3>加微信咨询</h3><p class="inv">微信 <span class="wxid">panplus5</span></p></div><div class="c"><h3>确认套餐与质保</h3><p class="inv">选择套餐、质保档位，是否开票</p></div>
-<div class="c"><h3>付款</h3><p class="inv">按确认的价格付款</p></div><div class="c"><h3>开通 / 交付</h3><p class="inv">完成开通并交付</p></div><div class="c"><h3>售后质保</h3><p class="inv">按所选质保规则处理</p></div></div></section>
-<section id="policy"><h2>质保说明</h2><div class="grid">
+<div class="c"><h3>付款</h3><p class="inv">按确认的价格付款</p></div><div class="c"><h3>开通 / 交付</h3><p class="inv">完成开通并交付</p></div><div class="c"><h3>售后质保</h3><p class="inv">按所选质保规则处理</p></div></div>
+</div></section>
+
+<section class="shelf alt" id="policy"><div class="w">
+<div class="sh-head"><h2 class="st">质保说明。<span class="s">ChatGPT 两档规则。</span></h2></div>
+<div class="grid pol">
 <div class="c"><h3>【订阅质保】</h3><ul><li>掉订阅可以质保退款，封号不能质保。</li><li>可以帮忙过手机验证。</li><li>出现手机号二次验证可以回收（按剩余天数退款）。</li></ul></div>
-<div class="c"><h3>【封号质保】</h3><ul><li>掉订阅、封号都质保退款。</li><li>Plus：封号按天退款。</li><li>Pro100 5x / Pro200 10x：封号按天的 1/3 退款。</li><li>可以帮忙过手机验证。</li><li>出现手机号二次验证可以回收（按剩余天数退款）。</li></ul></div></div></section>
-<section id="faq"><h2>常见问题</h2>
+<div class="c"><h3>【封号质保】</h3><ul><li>掉订阅、封号都质保退款。</li><li>Plus：封号按天退款。</li><li>Pro100 5x / Pro200 10x：封号按天的 1/3 退款。</li><li>可以帮忙过手机验证。</li><li>出现手机号二次验证可以回收（按剩余天数退款）。</li></ul></div>
+<div class="c"><h3>【Grok】</h3><ul><li>具体质保与开票请咨询客服。</li></ul></div></div>
+</div></section>
+
+<section class="shelf" id="faq"><div class="w" style="max-width:860px">
+<div class="sh-head"><h2 class="st">常见问题。</h2></div>
 <details><summary>封号和掉订阅有什么区别？</summary><p>掉订阅指订阅失效；封号指账号被封。订阅质保只保掉订阅，封号质保两者都保。</p></details>
 <details><summary>教师 / 学生有优惠吗？</summary><p>有。教师或学生身份可享教育优惠，最少优惠 10 元起，具体优惠金额咨询时按套餐确认。</p></details><details><summary>什么是开票价？</summary><p>需要开票时的价格，例如 Plus 订阅质保 160，需要开票时为 170。</p></details>
 <details><summary>手机验证怎么处理？</summary><p>订阅质保和封号质保都可以帮忙过手机验证；如出现手机号二次验证，可以回收，按剩余天数退款。</p></details>
 <details><summary>退款怎么算？</summary><p>封号质保下：Plus 封号按天退款；Pro100 5x、Pro200 10x 封号按天的 1/3 退款。手机号二次验证回收按剩余天数退款。</p></details>
-<details><summary>该选哪档质保？</summary><p>只担心掉订阅可选订阅质保；希望封号也有保障可选封号质保。拿不准可加微信咨询。</p></details></section>
-<section id="fb"><style>#fb .fbg{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1000px;margin:16px auto;position:relative}@media(max-width:640px){#fb .fbg{grid-template-columns:1fr}}#fb .fbc{position:relative;overflow:hidden;padding:16px;border-radius:16px;background:rgba(127,127,127,.08)}#fb .fbc blockquote{margin:0 0 12px;font-size:16px;line-height:1.6}#fb .fbc img{width:100%;border-radius:12px;display:block}#fb .masked{max-height:420px}#fb .masked img,#fb .masked blockquote{filter:blur(.6px);opacity:.95}#fb .fbm{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,var(--bg) 100%)}#fb .more{text-align:center;margin:-60px auto 0;position:relative;z-index:2}#fb .more a{display:inline-block;padding:10px 20px;border-radius:999px;background:#4f46e5;color:#fff;text-decoration:none;font-weight:600}</style><h2 style="text-align:center">用户反馈</h2><p style="text-align:center;opacity:.7;font-size:14px">以下为真实客户聊天截图（已隐去个人信息）</p><div class="fbg"><div class="fbc"><blockquote>“你的这 160 真的太值了……要不然我昨天账号的事情，我都得搞一个月”</blockquote><img src="img/fb1.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc"><blockquote>“之前的供应商老跑路，或者封号……你这充的没封。靠谱”</blockquote><img src="img/fb3.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc"><blockquote>“主要你这稳定服务也好……已经很牛逼啦，核心优势”</blockquote><img src="img/fb2.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc"><blockquote>“到位了，高效！”</blockquote><img src="img/fb4.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc masked"><blockquote>“登陆好了，我明天跟您购买会员”</blockquote><img src="img/fb5.png" alt="客户反馈聊天截图" loading="lazy"><div class="fbm"></div></div><div class="fbc masked"><blockquote>“好了，谢谢！点赞”</blockquote><img src="img/fb6.png" alt="客户反馈聊天截图" loading="lazy"><div class="fbm"></div></div></div></section>
-<section id="contact"><div class="ct"><div>下单 / 咨询请加微信</div><div class="wx wxid">panplus5</div><button id="cp">复制微信号</button><div id="ok" style="font-size:13px;margin-top:6px"></div></div></section>
-</main><footer>价格如有变动以沟通确认为准 · 本页为个人代购价格展示，非官方页面</footer>
+<details><summary>该选哪档质保？</summary><p>只担心掉订阅可选订阅质保；希望封号也有保障可选封号质保。拿不准可加微信咨询。</p></details>
+<details><summary>Grok 有哪些档位？</summary><p>Plus（官方 $8）¥80；Premium（官方 $30）¥249，支持 Grok Bot；Super（官方 $100）¥749，支持 Grok Bot；Ultra（官方 $200）¥1499，支持 Grok Bot。具体质保与开票请咨询客服。</p></details>
+</div></section>
+
+<section class="shelf alt" id="fb"><div class="w">
+<div class="sh-head" style="justify-content:center;text-align:center"><div><h2 class="st">用户反馈。<span class="s">真实客户聊天截图。</span></h2><p style="color:var(--soft);font-size:14px;margin:8px 0 0">以下为真实客户聊天截图（已隐去个人信息）</p></div></div>
+<div class="fbg"><div class="fbc"><blockquote>“你的这 160 真的太值了……要不然我昨天账号的事情，我都得搞一个月”</blockquote><img src="img/fb1.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc"><blockquote>“之前的供应商老跑路，或者封号……你这充的没封。靠谱”</blockquote><img src="img/fb3.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc"><blockquote>“主要你这稳定服务也好……已经很牛逼啦，核心优势”</blockquote><img src="img/fb2.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc"><blockquote>“到位了，高效！”</blockquote><img src="img/fb4.png" alt="客户反馈聊天截图" loading="lazy"></div><div class="fbc masked"><blockquote>“登陆好了，我明天跟您购买会员”</blockquote><img src="img/fb5.png" alt="客户反馈聊天截图" loading="lazy"><div class="fbm"></div></div><div class="fbc masked"><blockquote>“好了，谢谢！点赞”</blockquote><img src="img/fb6.png" alt="客户反馈聊天截图" loading="lazy"><div class="fbm"></div></div></div>
+</div></section>
+
+<section class="band" id="contact"><div class="w">
+<div class="k">下单 / 咨询</div><h2>下单 / 咨询请加微信</h2><p>选好套餐、质保档位，告诉客服是否需要开票。</p>
+<div class="wx wxid">panplus5</div><button id="cp">复制微信号</button><div id="ok"></div>
+<div class="picked" id="picked" hidden></div>
+</div></section>
+</main>
+<div class="dock" id="dock" aria-live="polite"><span class="t" id="dockt"></span><a class="btn" href="#contact">咨询下单</a><button class="x" id="dockx" aria-label="关闭">×</button></div>
+<footer><div class="w">
+<ol><li id="fn1">开票：全部 ChatGPT 套餐均可开票，需要开票时按对应套餐的「开票价」，下单时跟客服说明开票信息。</li><li id="fn2">教育优惠：教师或学生身份下单可享教育优惠，最少优惠 10 元起，具体优惠金额咨询时按套餐确认。</li><li id="fn3">Grok：页面仅展示档位与价格，具体质保与开票请咨询客服。</li></ol>
+<div class="ln">价格如有变动以沟通确认为准 · 本页为个人代购价格展示，非官方页面 · 文中提及的 ChatGPT、Grok 等名称归各自所有者所有。</div>
+</div></footer>
 <script>
 var W=(function(){var q=(location.search+'&'+location.hash.slice(1)).replace(/^\?/,'').split('&');for(var i=0;i<q.length;i++){var kv=q[i].split('=');if(kv[0].toLowerCase()==='sales'&&kv[1]){try{var v=decodeURIComponent(kv[1]).trim();if(v)return v.slice(0,40)}catch(e){}}}return 'panplus5'})();
 document.querySelectorAll('.wxid').forEach(function(e){e.textContent=W});
 </script>
 <script>
+/* ChatGPT data: unchanged from v1 */
 var D={a:{d:"掉订阅可以质保退款，封号不能质保。可以帮忙过手机验证，出现手机号二次验证可以回收（按剩余天数退款）",p:[["Plus",160,170,"封号不质保"],["Pro100 5x",799,859,"封号不质保"],["Pro200 10x",1459,1499,"封号不质保"]]},
 b:{d:"掉订阅、封号都质保退款。可以帮忙过手机验证，出现手机号二次验证可以回收（按剩余天数退款）",p:[["Plus",200,210,"封号按天退款"],["Pro100 5x",859,899,"封号按天的 1/3 退款"],["Pro200 10x",1559,1599,"封号按天的 1/3 退款"]]}};
 var M={"Plus":"Plus 套餐","Pro100 5x":"Pro100 套餐，5x 档位","Pro200 10x":"Pro200 套餐，10x 档位"};
-function R(k){var o=D[k];desc.textContent=o.d;cards.innerHTML=o.p.map(function(x,i){return '<div class="c'+(i==1?' hot':'')+'"><h3>'+x[0]+'</h3><div class="pr">'+x[1]+' <small>元</small></div><div class="inv"><span style="display:inline-block;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;font-weight:700;border-radius:999px;padding:2px 8px;font-size:12px;margin-right:6px">可开票</span>开票价 '+x[2]+'</div><ul><li>'+M[x[0]]+'</li><li>掉订阅质保退款</li><li>'+x[3]+'</li></ul><a class="btn" href="#contact">咨询下单</a></div>'}).join('');
-document.querySelectorAll('.tabs button').forEach(function(b){b.className=b.dataset.k==k?'on':''})}
-document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){R(b.dataset.k)}});R('a');
+var TL={"Plus":["linear-gradient(145deg,#3ddc97,#0f8f66)","Plus"],"Pro100 5x":["linear-gradient(145deg,#24b3a8,#0b5f63)","5x"],"Pro200 10x":["linear-gradient(145deg,#6d8a5e,#1f3b2b)","10x"]};
+var WK={a:"订阅质保",b:"封号质保"};
+/* Grok data: only the facts provided */
+var G=[["Plus",8,80,"入门档位",0],["Premium",30,249,"支持 Grok Bot",1],["Super",100,749,"支持 Grok Bot",1],["Ultra",200,1499,"支持 Grok Bot",1]];
+var GT=["linear-gradient(145deg,#d9dbe2,#8a8f9c)","linear-gradient(145deg,#3a3a42,#050507)","linear-gradient(145deg,#8b7bff,#4b2fd6)","linear-gradient(145deg,#f3cf6b,#b07a12)"];
+var SEL=null,CK='a';
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function R(k){CK=k;var o=D[k];desc.textContent=o.d;cards.innerHTML=o.p.map(function(x,i){var t=TL[x[0]],id='gpt-'+k+'-'+i;return '<div class="c pc'+(i==1?' hot':'')+'" data-id="'+id+'" data-n="ChatGPT '+x[0]+' · '+WK[k]+'" data-v="¥'+x[1]+'（开票价 '+x[2]+'）"><div class="art"><div class="tile" style="background:'+t[0]+'">'+t[1]+'</div></div><div class="tag">'+(i==1?'热门':'')+'</div><div class="fam">ChatGPT · '+WK[k]+'</div><h3>'+x[0]+'</h3><div class="pr">'+x[1]+'<small>元</small></div><div class="inv"><span class="k">可开票</span>开票价 '+x[2]+'</div><hr><ul class="ck"><li>'+M[x[0]]+'</li><li>掉订阅质保退款</li><li'+(x[3]=='封号不质保'?' class="x"':'')+'>'+x[3]+'</li></ul><a class="btn" href="#contact">咨询下单</a><a class="more" href="#policy">了解更多</a></div>'}).join('');
+document.querySelectorAll('.tabs button').forEach(function(b){b.className=b.dataset.k==k?'on':''});mark()}
+document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){R(b.dataset.k)}});
+gcards.innerHTML=G.map(function(x,i){return '<div class="c pc" data-id="grok-'+i+'" data-n="Grok '+x[0]+'" data-v="¥'+x[2]+'"><div class="art"><div class="tile sm" style="background:'+GT[i]+'">'+x[0]+'</div></div><div class="tag">新品</div><div class="fam">Grok</div><h3>'+x[0]+'</h3><div class="sub">官方 $'+x[1]+' / 月档位</div><div class="pr">¥'+x[2]+'</div><div class="inv">具体质保与开票请咨询客服</div><hr><ul class="ck"><li>Grok '+x[0]+' 档位</li>'+(x[4]?'<li class="bot">支持 Grok Bot</li>':'')+'</ul><a class="btn blk" href="#contact">咨询下单</a><a class="more" href="#faq">了解更多</a></div>'}).join('');
+R('a');
+/* selection -> dock + contact summary */
+function mark(){document.querySelectorAll('.pc').forEach(function(c){c.classList.toggle('sel',!!SEL&&c.dataset.id==SEL.id)})}
+function pick(c){SEL={id:c.dataset.id,n:c.dataset.n,v:c.dataset.v};mark();dockt.innerHTML='已选 '+esc(SEL.n)+'<b>'+esc(SEL.v)+'</b>';dock.classList.add('on');picked.hidden=false;picked.textContent='你选择的：'+SEL.n+' '+SEL.v}
+document.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.pc');if(c&&!e.target.closest('.more'))pick(c)});
+dockx.onclick=function(){dock.classList.remove('on')};
+/* product switcher with hash (#gpt / #grok), keeps Sales in hash if present */
+function prodFromHash(){var t=location.hash.slice(1).split('&');for(var i=0;i<t.length;i++){var v=t[i].toLowerCase();if(v=='grok')return 'grok';if(v=='gpt'||v=='chatgpt')return 'gpt'}return null}
+function show(p){document.querySelectorAll('.panel').forEach(function(e){e.classList.toggle('on',e.dataset.panel==p)});document.querySelectorAll('.chip').forEach(function(b){b.classList.toggle('on',b.dataset.p==p);b.setAttribute('aria-selected',b.dataset.p==p)})}
+document.querySelectorAll('.chip').forEach(function(b){b.onclick=function(){var p=b.dataset.p,keep=location.hash.slice(1).split('&').filter(function(s){return /^sales=/i.test(s)});show(p);history.replaceState(null,'',location.pathname+location.search+'#'+[p].concat(keep).join('&'));document.getElementById('price').scrollIntoView({behavior:'smooth'})}});
+show(prodFromHash()||'gpt');
+window.addEventListener('hashchange',function(){var p=prodFromHash();if(p)show(p)});
 var h=document.documentElement;h.dataset.t=localStorage.t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'');
 tg.onclick=function(){h.dataset.t=h.dataset.t=='dark'?'':'dark';localStorage.t=h.dataset.t};
 cp.onclick=function(){var s=W,f=function(){var t=document.createElement('textarea');t.value=s;document.body.appendChild(t);t.select();try{document.execCommand('copy');ok.textContent='已复制'}catch(e){ok.textContent='请长按复制：'+W}t.remove()};
 if(navigator.clipboard)navigator.clipboard.writeText(s).then(function(){ok.textContent='已复制'},f);else f()};
-</script><!-- v3-rich --><script>
-(function(){
-document.addEventListener('mousemove',function(e){var c=e.target.closest&&e.target.closest('#price .c');if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
-document.querySelectorAll('section:not(#price) h2, #highlights>div>div, #flow .c, #policy .c, #fb .fbc, details, #contact .ct').forEach(function(el){el.classList.add('rv');io.observe(el)});}
-})();
+document.querySelectorAll('#why .c, #flow .c, #policy .c, #fb .fbc, details, .sh-head').forEach(function(el){el.classList.add('rv');io.observe(el)});}
 </script>
 </body></html>
