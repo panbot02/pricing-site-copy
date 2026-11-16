@@ -161,6 +161,54 @@ footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;paddi
 .pin{animation:pin .7s var(--ease) both}@keyframes pin{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @media (hover:none){.c:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+/* ===== wide layout: use the full canvas on large screens ===== */
+.w{max-width:1520px;padding:0 clamp(20px,4vw,72px)}
+.faq-w{max-width:1000px}
+.hero h1{font-size:clamp(40px,5.4vw,104px)}.pc-t{text-wrap:balance}
+@media(min-width:1200px){
+ .hero h1{font-size:clamp(64px,4.5vw,90px);white-space:nowrap}
+ .hero .w{grid-template-columns:1.05fr .95fr;gap:clamp(24px,3vw,64px);min-height:clamp(640px,44vw,860px)}
+ .hero p{font-size:clamp(19px,1.25vw,24px)}
+ .hero .from .n{font-size:clamp(44px,3.2vw,62px)}.hero .from small{font-size:clamp(14px,.9vw,17px)}
+ .btn{font-size:clamp(15px,.95vw,17px);padding:clamp(11px,.8vw,14px) clamp(22px,1.6vw,30px)}
+ .hero-perk{max-width:clamp(480px,34vw,600px);padding:clamp(18px,1.4vw,26px) clamp(22px,1.8vw,32px)}
+ .hero-perk .pc-t{font-size:clamp(22px,1.6vw,30px)}.hero-perk .pc-b{font-size:clamp(14.5px,.95vw,17px)}
+ .pill{font-size:clamp(12.5px,.8vw,14px)}
+ .pnav{padding:clamp(26px,2.4vw,44px) 0 clamp(22px,2vw,38px)}
+ .chips{gap:clamp(18px,2vw,40px)}.chip{min-width:110px}
+ .chip .ic{width:clamp(56px,4.4vw,80px);height:clamp(56px,4.4vw,80px);border-radius:clamp(14px,1.1vw,20px)}
+ .chip span.nm{font-size:clamp(12px,.85vw,15px)}
+ .shelf{padding:clamp(88px,7vw,140px) 0 clamp(72px,5.5vw,110px)}
+ .st{font-size:clamp(40px,3.1vw,56px)}
+ .sh-head{margin-bottom:clamp(32px,2.6vw,48px)}
+ .grid{gap:clamp(20px,1.7vw,32px)}
+ #grok .grid{grid-template-columns:repeat(4,1fr)}#gpt .grid#cards{grid-template-columns:repeat(3,1fr)}
+ .pc{padding:clamp(30px,2.4vw,44px) clamp(24px,2vw,36px) clamp(24px,2vw,34px);border-radius:clamp(18px,1.4vw,26px)}
+ .pc .art{height:clamp(132px,10vw,190px);margin-bottom:clamp(18px,1.4vw,26px)}
+ .pc .pi{width:clamp(132px,10vw,190px);height:clamp(132px,10vw,190px)}
+ .c h3{font-size:clamp(26px,1.9vw,34px)}.pr{font-size:clamp(30px,2.3vw,42px)}
+ .ck{font-size:clamp(13.5px,.9vw,15.5px)}.c .btn{font-size:clamp(14px,.9vw,16px);padding:clamp(9px,.7vw,13px) 18px}
+ .why{gap:clamp(20px,1.7vw,32px)}.why .c{padding:clamp(30px,2.4vw,44px);min-height:clamp(236px,17vw,300px)}.why h3{font-size:clamp(21px,1.5vw,26px)}.why p{font-size:clamp(14px,.95vw,16px)}
+ .steps{gap:clamp(20px,1.7vw,32px)}.steps .c{padding:clamp(28px,2.2vw,40px) clamp(24px,1.8vw,32px)}.steps .c:before{font-size:clamp(34px,2.6vw,48px)}
+ .pol .c{padding:clamp(30px,2.4vw,44px)}.pol ul{font-size:clamp(14px,.95vw,16px)}
+ /* FAQ in two columns */
+ .faq-w{max-width:1520px;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(20px,1.7vw,32px);align-items:start}
+ .faq-w>.sh-head{grid-column:1/-1}.faq-w details{margin-bottom:clamp(12px,1vw,18px)}
+ summary{font-size:clamp(17px,1.1vw,19px);padding:clamp(20px,1.5vw,26px) clamp(24px,1.8vw,32px)}details p{margin-left:clamp(24px,1.8vw,32px);margin-right:clamp(24px,1.8vw,32px);font-size:clamp(15px,1vw,17px)}
+ /* feedback in three columns */
+ #fb .fbg{max-width:none;grid-template-columns:repeat(3,1fr);gap:clamp(20px,1.7vw,32px)}
+ /* contact: two columns, discount card on the right */
+ .band{padding:clamp(110px,8vw,160px) 0 clamp(120px,8.5vw,170px)}
+ .band .w{display:grid;grid-template-columns:1.1fr .9fr;column-gap:clamp(40px,5vw,120px);align-items:center;text-align:left}
+ .band .w>*{grid-column:1;justify-self:start}
+ .band .w>.perk-card{grid-column:2;grid-row:1/span 8;align-self:center;justify-self:stretch;max-width:none;margin:0;padding:clamp(32px,2.6vw,48px)}
+ .band h2{font-size:clamp(48px,4vw,76px)}.band p{font-size:clamp(19px,1.25vw,23px)}.band .wx{font-size:clamp(56px,4.6vw,88px)}
+ .band .perk-card .pc-t{font-size:clamp(26px,1.9vw,36px)}.band p.pc-b{font-size:clamp(15px,1.1vw,19px)}.band .pc-ey{font-size:clamp(12px,.85vw,14px)}
+ .band:before{width:min(1600px,90vw);height:clamp(620px,40vw,800px)}
+}
+@media(min-width:1200px) and (max-width:1399px){#grok .grid{gap:18px}}
+@media(min-width:1400px){.stage{zoom:1.1}}@media(min-width:1600px){.stage{zoom:1.22}}@media(min-width:1800px){.stage{zoom:1.32}}
 </style>
 </head><body>
 <header><div class="w"><b>订阅价格表</b><div style="display:flex;align-items:center"><nav><a class="h" href="#price">价格</a><a class="h" href="#why">优势</a><a class="h" href="#flow">流程</a><a href="#fb">反馈</a><a href="#faq">FAQ</a><a href="#contact">联系</a></nav><button class="tg" id="tg" aria-label="切换深色/浅色">🌓</button></div></div></header>
@@ -238,7 +286,7 @@ footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;paddi
 <div class="c"><h3>【Grok】</h3><ul><li>具体质保与开票请咨询客服。</li></ul></div></div>
 </div></section>
 
-<section class="shelf" id="faq"><div class="w" style="max-width:860px">
+<section class="shelf" id="faq"><div class="w faq-w">
 <div class="sh-head"><h2 class="st">常见问题。</h2></div>
 <details><summary>封号和掉订阅有什么区别？</summary><p>掉订阅指订阅失效；封号指账号被封。订阅质保只保掉订阅，封号质保两者都保。</p></details>
 <details><summary>教师 / 学生有优惠吗？</summary><p>有。教师或学生身份可享教育优惠，最少优惠 10 元起，具体优惠金额咨询时按套餐确认。</p></details><details><summary>什么是开票价？</summary><p>需要开票时的价格，例如 Plus 订阅质保 160，需要开票时为 170。</p></details>
