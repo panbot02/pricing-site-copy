@@ -136,6 +136,19 @@ details p{color:var(--mu);margin:-6px 24px 0;padding-bottom:22px;font-size:15px;
 .dock.on{transform:translate(-50%,0);visibility:visible}.dock .di{width:36px;height:36px;flex:none;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}.dock .di img{width:28px;height:28px}
 .dock .t{font-size:13.5px;color:#d2d2d7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dock .t b{font-family:var(--fd);font-size:17px;color:#fff;margin-left:8px;font-weight:600}.dock .btn{padding:8px 16px;font-size:14px;white-space:nowrap}
 .dock .x{background:none;border:0;color:#86868b;font-size:18px;padding:0 8px 0 2px;transition:color .2s}.dock .x:hover{color:#fff}
+/* perk note */
+.perk{display:flex;align-items:center;gap:10px;width:max-content;max-width:100%;margin:18px auto 0;padding:7px 8px 7px 8px;border-radius:999px;background:linear-gradient(90deg,rgba(255,159,10,.10),rgba(123,92,255,.10));box-shadow:inset 0 0 0 1px rgba(255,159,10,.28);color:var(--tx);font-size:13.5px;line-height:1.4;transition:box-shadow .3s var(--ease),transform .3s var(--spring)}
+.perk:hover{box-shadow:inset 0 0 0 1px rgba(255,159,10,.5),0 10px 24px -14px rgba(255,140,0,.6);transform:translateY(-1px)}
+.perk b{font-weight:600;color:#c2410c}[data-t=dark] .perk b{color:#ffb340}
+.pk-ic{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffb340,#ff6a3d);color:#fff;box-shadow:0 4px 10px -4px rgba(255,106,61,.7)}.pk-ic svg{width:15px;height:15px}
+.pk-go{flex:none;color:var(--acl);font-size:13px;padding:0 8px 0 4px;white-space:nowrap}
+@media(max-width:560px){.perk{border-radius:16px;align-items:flex-start;padding:10px 12px;font-size:13px}.pk-go{display:none}}
+.perk-card{position:relative;max-width:520px;margin:34px auto 0;padding:24px 28px 26px;border-radius:22px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 30px 60px -30px rgba(255,140,0,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.perk-card:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,179,64,.8),rgba(123,92,255,.6) 60%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.pc-ey{display:inline-flex;align-items:center;gap:6px;color:#ffb340;font-size:12px;font-weight:600;letter-spacing:.14em}.pc-ey svg{width:15px;height:15px}
+.pc-t{font-family:var(--fd);font-size:clamp(22px,3.4vw,28px);font-weight:600;letter-spacing:-.02em;margin:8px 0 6px;color:#fff}
+.band p.pc-b{font-size:15px;color:#c7c7cc;margin:0;line-height:1.7}
+.kw{display:inline-block;padding:1px 10px;margin:0 2px;border-radius:999px;background:linear-gradient(90deg,#ffb340,#ff6a3d);color:#1d1d1f;font-weight:600;font-size:14px}
 /* footer */
 footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;padding:34px 0 100px;border-top:1px solid var(--bd)}footer ol{padding-left:16px;margin:0 0 16px}footer li{margin:6px 0}footer .ln{border-top:1px solid var(--hair);padding-top:16px;color:var(--soft)}
 /* scroll reveal */
@@ -167,7 +180,7 @@ footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;paddi
 <div class="pnav" id="price"><div class="w"><div class="chips" role="tablist" aria-label="选择产品">
 <button class="chip on" data-p="gpt" role="tab"><span class="ic"><img src="img/switch-chatgpt.webp" alt="ChatGPT" width="42" height="42"></span><span class="nm">ChatGPT</span><span class="bar"></span></button>
 <button class="chip" data-p="grok" role="tab"><span class="ic"><img src="img/switch-grok.webp" alt="Grok" width="42" height="42"></span><span class="nm">Grok · 新品</span><span class="bar"></span></button>
-</div></div></div>
+</div><a class="perk" href="#contact"><span class="pk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v7.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V12M12 8v12.5M12 8c-1.6 0-4.5-.6-4.5-2.6C7.5 3.9 9 3.4 10 4c1.2.7 2 4 2 4zm0 0c1.6 0 4.5-.6 4.5-2.6 0-1.5-1.5-2-2.5-1.4-1.2.7-2 4-2 4z"/></svg></span><span>创业 / 教育行业的朋友，加微信时备注<b>「创业」</b>或<b>「教育」</b>，可享更多优惠</span><span class="pk-go">了解 ›</span></a></div></div>
 
 <section class="shelf" id="shelf"><div class="w">
 <!-- ChatGPT -->
@@ -237,6 +250,7 @@ footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;paddi
 <section class="band" id="contact"><div class="w">
 <div class="k">下单 / 咨询</div><h2>下单 / 咨询请加微信</h2><p>选好套餐、质保档位，告诉客服是否需要开票。</p>
 <div class="wx wxid">panplus5</div><button id="cp">复制微信号</button><div id="ok"></div>
+<div class="perk-card"><div class="pc-ey"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v7.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V12M12 8v12.5M12 8c-1.6 0-4.5-.6-4.5-2.6C7.5 3.9 9 3.4 10 4c1.2.7 2 4 2 4zm0 0c1.6 0 4.5-.6 4.5-2.6 0-1.5-1.5-2-2.5-1.4-1.2.7-2 4-2 4z"/></svg>专属优惠</div><div class="pc-t">创业 / 教育行业，享更多优惠</div><p class="pc-b">添加微信时备注 <span class="kw">创业</span> 或 <span class="kw">教育</span>，即可享受更多优惠。</p></div>
 <div class="picked" id="picked" hidden></div>
 </div></section>
 </main>
