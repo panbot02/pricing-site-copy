@@ -79,7 +79,7 @@ nav a[href="#contact"]{background:#f5f5f7;color:#1d1d1f;padding:5px 13px;border-
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .c{position:relative;background:var(--card);border-radius:18px;padding:30px 24px 24px;box-shadow:var(--sh);transition:transform .45s var(--ease),box-shadow .45s var(--ease);display:flex;flex-direction:column}
 .c:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shh)}
-.pc{cursor:pointer;outline:0}.pc:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 2px var(--ac);opacity:0;transition:opacity .3s}.pc.sel:after{opacity:1}
+.pc{cursor:pointer;outline:0}.pc:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:0 0 0 2px var(--ac);opacity:0;transition:opacity .3s}.pc.sel:after{opacity:1}
 .pc .art{height:132px;display:grid;place-items:center;margin:0 0 18px}
 .pc .pi{width:132px;height:132px;object-fit:contain;display:block;filter:drop-shadow(0 14px 16px rgba(0,0,0,.16));transition:transform .7s var(--spring)}.pc:hover .pi{transform:scale(1.05) rotate(-2deg)}
 [data-t=dark] .pc .pi{filter:drop-shadow(0 14px 16px rgba(0,0,0,.6))}
@@ -339,7 +339,9 @@ R('a');
 /* selection -> dock + contact summary */
 function mark(){document.querySelectorAll('.pc').forEach(function(c){c.classList.toggle('sel',!!SEL&&c.dataset.id==SEL.id)})}
 function pick(c){SEL={id:c.dataset.id,n:c.dataset.n,v:c.dataset.v};mark();docki.src='img/'+c.dataset.img+'.webp';dockt.innerHTML='已选 '+esc(SEL.n)+'<b>'+esc(SEL.v)+'</b>';dock.classList.add('on');picked.hidden=false;picked.textContent='你选择的：'+SEL.n+' '+SEL.v}
-document.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.pc');if(c&&!e.target.closest('.more'))pick(c)});
+document.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.pc');if(c&&!e.target.closest('.more'))pick(c);
+// Every consultation CTA lands at the contact/WeChat section, including generated cards and dock.
+var a=e.target.closest&&e.target.closest('a');if(a&&a.textContent.replace(/\s/g,'')==='咨询下单'&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&(!e.button||e.button===0)){e.preventDefault();dock.classList.remove('on');document.getElementById('contact').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}});
 dockx.onclick=function(){dock.classList.remove('on')};
 /* product switcher with hash (#gpt / #grok), keeps Sales in hash if present */
 function prodFromHash(){var t=location.hash.slice(1).split('&');for(var i=0;i<t.length;i++){var v=t[i].toLowerCase();if(v=='grok')return 'grok';if(v=='gpt'||v=='chatgpt')return 'gpt'}return null}
