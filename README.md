@@ -6,3 +6,31 @@ Static pricing landing page (ChatGPT + Grok) — deploy as-is to GitHub Pages or
 - Product switcher: `#gpt` (default) / `#grok` deep links, e.g. `https://panbot02.github.io/v2/#grok`.
 - Sales WeChat ID: default `panplus5`; override with `?Sales=<wechatId>` (key is case-insensitive, also accepted in the hash, e.g. `#grok&Sales=JesseWen77`). Every `.wxid` element shows it and the 复制微信号 button (`#cp`) copies it.
 - All asset paths are relative, so it works under a GitHub Pages subpath.
+
+## 脚萌萌哒 · 自助充值
+
+**生产静态文件，尚未上传 GitHub。** `redeem-config.js` 设置 `window.JMM_DESIGN_PREVIEW_ONLY = false`，价格页导航默认指向真实的 `redeem.html`（保留 `Sales`）。只有显式 `#preview=...` / `?preview=...` 链接展示虚构演示；演示输入框只读，API 被硬性阻止，不会使用真实充值接口。默认页面不会自动请求充值接口，必须先由用户输入兑换码。
+
+- `redeem.html`, `redeem.css`, `redeem.js`: CDK → provider-specific Session input → explicit account/plan confirmation → asynchronous order results. `redeem-config.js` contains **only** operator API routing configuration, no secrets.
+- Navigation from pricing and back keeps the effective case-insensitive `Sales` value (including Sales in a hash). WeChat defaults to `panplus5`.
+- No Session/Cookie, compressed token, refreshed token, or account is saved in localStorage/sessionStorage. Session lives in memory only, is cleared after submission/back/exit, and must be pasted again after refreshing. Session/CDK must never be sent to chat. Only the CDK, stable nonce, activation metadata and order query credentials persist in sessionStorage for this tab's recovery. Theme alone uses localStorage.
+- Up to 5 MB text-file imports are read locally; zstd compression is also local. Vendored `vendor/zstd/` is `@bokuweb/zstd-wasm` 0.0.27 (npm; MIT), libzstd WebAssembly. No runtime CDN or public CORS proxy. Serve with an HTTP static server, not `file://`. Keep `.wasm` served as `application/wasm` (GitHub Pages supports this).
+- Design preview: `redeem.html#preview=step1`, `step2`, `confirm`, `success`, `query`, `processing`, `failed`. A visible banner marks fake data; previews never call the production API. `?preview=...` also works. Do not use preview links for real redemption.
+- Query accepts up to 50 CDKs, one per line. No results does not mean a CDK is invalid. Result timestamps use `Asia/Shanghai`; zone-less timestamps are treated as Beijing time. Payment-card values display only the last 4 digits. Never show full card numbers.
+
+### Production proxy / deployment
+
+- Worker name: `jiaomengmeng-recharge-api`
+- API base configured in `redeem-config.js`: `https://jiaomengmeng-recharge-api.jiaomengmeng-panbot02.workers.dev`
+- Worker upload deployment ID: `de3a8f6485824d3e89b71ce8179c93e9`.
+- Created a new workers.dev subdomain and an otherwise unbound/default Worker using the sanctioned Cloudflare connector. No existing Worker was overwritten; no plan/billing mutations or paid resources were requested. The subscriptions/billing API was not retried. No tokens or secrets are needed.
+- The official API does not return usable browser CORS headers for GitHub Pages, so the frontend uses this operator-owned fixed-destination proxy, not a public proxy.
+- Only POST/OPTIONS to `/api/v1/sub/verifyCdk`, `precheckAccount`, `redeem`, `redeemResult`, `queryOrder`. Only `https://panbot02.github.io` and the Worker's own origin receive CORS permission. Requests without Origin may use these same fixed paths; CORS is not authentication.
+- Fixed upstream `https://api.easysub.site`; rejects query-string targets and other paths; redirects are errors. No incoming Cookie/Authorization/IP headers are forwarded. Upstream status, response body and Retry-After are preserved; Set-Cookie and arbitrary response headers are not forwarded. Body cap 8 MiB; upload cap 10 seconds; upstream timeout 30 seconds. No application cache, databases, KV, secrets or other bindings.
+- Worker `observability.enabled`, invocation/body logs, traces, Logpush and tail consumers are disabled. Do not enable capture of Session/Cookie/request bodies. This is not a promise about the recharge provider's own retention.
+- Before the account precheck, the UI explains that Session/Cookie is an account credential and will be transmitted over HTTPS via the Cloudflare Worker to `api.easysub.site`. Compression is local, not encryption. Only continue if you trust the recharge provider.
+- Real CDK acceptance gap: no real CDK, real account Session/Cookie, real redeem submission or successful recharge has been tested. A controlled acceptance test still needs to cover actual CDK validity/locks, eligibility, refreshed token, explicit confirmation, submission, polling and query-order recovery. Mock tests and success previews are not proof of a successful real recharge.
+- Public HTTP/CORS verification results and exact checks are delivered separately in `/workspace/redeem-worker-checks/`. Public checks passed on 2026-11-19 at 23:44 (Asia/Shanghai / UTC+8): preflight 204 with the exact allowed origin; invalid synthetic CDK 200 with provider business code 0 / CDK 不存在或不可用. Real Chrome on https://panbot02.github.io also read the response successfully (OPTIONS 204, POST 200). Initial certificate provisioning delay resolved. Initial upstream 502 was fixed by changing unsupported Workers redirect:error to redirect:manual plus explicit 3xx rejection; no credentials or logs were used to debug it.
+- Static staging directory: `/workspace/redeem-live-upload/`; upload its CONTENTS preserving paths to the root of `panbot02/v2`. Do not put that directory itself under a nested path. Nothing has been pushed or uploaded by the bot. `proxy/` remains operator source outside the static upload bundle.
+
+For HTTP 429 the client honors both seconds and HTTP-date `Retry-After` and makes no new calls to the same endpoint until the wait has elapsed. HTTP 503 is a retry-later safety-check notice. Ambiguous submission/network failures are saved as uncertain and require order recovery before a new submit. Polling stops at a terminal result or after 3 minutes; a processing order can be looked up later by CDK. Activation locks are renewed only on deliberate precheck/confirmation, never in an idle timer.

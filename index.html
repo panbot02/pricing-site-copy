@@ -212,7 +212,7 @@ footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;paddi
 @media(max-width:420px){header nav{gap:12px}header #self-redeem{font-size:12px}}
 </style>
 </head><body>
-<header><div class="w"><b>订阅价格表</b><div style="display:flex;align-items:center"><nav><a id="self-redeem" href="redeem.html#preview=step1">自助充值</a><a class="h" href="#price">价格</a><a class="h" href="#why">优势</a><a class="h" href="#flow">流程</a><a href="#fb">反馈</a><a href="#faq">FAQ</a><a href="#contact">联系</a></nav><button class="tg" id="tg" aria-label="切换深色/浅色">🌓</button></div></div></header>
+<header><div class="w"><b>订阅价格表</b><div style="display:flex;align-items:center"><nav><a id="self-redeem" href="redeem.html">自助充值</a><a class="h" href="#price">价格</a><a class="h" href="#why">优势</a><a class="h" href="#flow">流程</a><a href="#fb">反馈</a><a href="#faq">FAQ</a><a href="#contact">联系</a></nav><button class="tg" id="tg" aria-label="切换深色/浅色">🌓</button></div></div></header>
 <main>
 <div class="hero"><div class="w">
 <div>
@@ -317,7 +317,7 @@ footer{background:var(--bg);color:var(--mu);font-size:12px;line-height:1.6;paddi
 <script>
 var W=(function(){var q=(location.search+'&'+location.hash.slice(1)).replace(/^\?/,'').split('&');for(var i=0;i<q.length;i++){var kv=q[i].split('=');if(kv[0].toLowerCase()==='sales'&&kv[1]){try{var v=decodeURIComponent(kv[1]).trim();if(v)return v.slice(0,40)}catch(e){}}}return 'panplus5'})();
 document.querySelectorAll('.wxid').forEach(function(e){e.textContent=W});
-var redeemLink=document.getElementById('self-redeem');if(/(?:^|[?&#])sales=/i.test(location.search+'&'+location.hash.slice(1)))redeemLink.href='redeem.html?Sales='+encodeURIComponent(W)+'#preview=step1';
+var redeemLink=document.getElementById('self-redeem');if(/(?:^|[?&#])sales=/i.test(location.search+'&'+location.hash.slice(1)))redeemLink.href='redeem.html?Sales='+encodeURIComponent(W);
 </script>
 <script>
 /* ChatGPT data: unchanged from v1 */
