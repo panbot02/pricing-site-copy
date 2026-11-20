@@ -1,0 +1,55 @@
+/* One shared, discrete three-tier type system. No remote font requests. */
+:root{
+  --type-body:16px;
+  --type-secondary:24px;
+  --type-title:56px;
+  --type-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI","Noto Sans","PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+  --ff:var(--type-sans);--fd:var(--type-sans);--font:var(--type-sans);
+}
+/* Reset nested small/em/sup, controls and generated glyphs too. Existing fluid
+   sizes are intentionally overridden here so a viewport has only three sizes. */
+:where(html,body,body *),:where(body *)::before,:where(body *)::after,:where(body *)::marker{
+  font-family:var(--type-sans)!important;
+  font-size:var(--type-body)!important;
+}
+:where(input)::placeholder,:where(textarea)::placeholder{font-family:var(--type-sans)!important;font-size:var(--type-body)!important}
+body{line-height:1.65;letter-spacing:0;font-kerning:normal;font-feature-settings:"kern" 1;font-synthesis:none;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+:where(h2,h2 *,h3,h3 *,.st,.st *,.pc-t,.pc-t *,.compare b,.providers .claude){font-size:var(--type-secondary)!important}
+:where(.steps .c)::before{font-size:var(--type-secondary)!important}
+:where(h1,h1 *,.hero .from .n,.pr,.band .wx,.wechat>b,.success-mark){font-size:var(--type-title)!important}
+:where(small,small *,sup,sub,.brand span,.claude em,.pr small,.pr small *,.result-status,.result-status *){font-size:var(--type-body)!important}
+:where(h1){font-weight:650!important;line-height:1.14!important;letter-spacing:-.035em!important}
+:where(h2,h3,.st,.pc-t){font-weight:600!important;line-height:1.3!important;letter-spacing:-.02em!important}
+:where(.pr,.hero .from .n,.band .wx,.wechat>b){font-weight:600!important;line-height:1.15!important;letter-spacing:-.035em!important;font-variant-numeric:tabular-nums lining-nums}
+:where(.pr,.inv,.result-cell b,.account b,.cdk-field){font-variant-numeric:tabular-nums lining-nums}
+:where(.eyebrow,.pc-ey,.section-tag){letter-spacing:.075em!important;line-height:1.5!important;font-weight:600!important}
+:where(nav,.btn,.text-btn,.mode-tabs,.chip){letter-spacing:0!important}
+:where(.btn,.text-btn,input,textarea,summary){line-height:1.55!important}
+:where(.caption,.privacy,.side-note p,.lead,.fine,footer,.pc-b){line-height:1.7!important}
+.tag{min-height:24px;line-height:1.5}.fam{margin-top:6px}.c h3{margin-top:4px}.c .pr{margin-top:14px}
+.hero h1{white-space:normal}.hero .w{row-gap:32px}.hero-perk{max-width:100%}
+:where(.wxid,.account b,.account small,.result-cell b,.result-card h3,.product-banner b){overflow-wrap:anywhere}
+.result-card h3{line-height:1.5}.result-status{display:inline-block;vertical-align:middle;line-height:1.5}
+.product-banner{align-items:center;flex-wrap:wrap}.product-banner>div{flex:1;min-width:130px}.verified{white-space:normal}
+.label-row,.actions,.inline-actions{flex-wrap:wrap}.upload{flex-wrap:wrap;line-height:1.6}.upload span{flex:1;min-width:150px}
+.stepper b{line-height:1.5}.stepper small{line-height:1.6}
+nav a,nav button{font-weight:500}.brand span{opacity:.7}
+@media(max-width:740px){
+  :root{--type-body:16px;--type-secondary:22px;--type-title:36px}
+  header .w b{white-space:nowrap}header .w nav{gap:8px}header .w nav a[href="#contact"]{padding:5px 6px}header .w .tg{margin-left:8px;width:28px}
+  .hero .w{padding-top:42px}.hero .from{gap:12px 24px}.hero h1{white-space:normal}
+  .stepper{gap:4px}.stepper li{min-width:0}.stepper b{display:block;text-wrap:balance;word-break:normal;overflow-wrap:break-word}
+  .stepper .num{width:32px;height:32px;line-height:1;margin-bottom:10px}.stepper li:not(:last-child):after{top:16px}
+  .providers{gap:16px;flex-wrap:wrap}.providers>span{gap:6px}
+  .compare>div{padding:18px}.preview-note{padding:16px 20px}.preview-controls{gap:8px}
+  .result-cell{min-width:0}.wechat>b{word-break:break-word}.help{padding:30px 24px}
+  .dock .t{white-space:normal;line-height:1.45}.dock .t b{display:block;margin-left:0}.dock{gap:10px}
+}
+/* Reserve existing feedback images' intrinsic ratios: larger readable copy must
+   not allow lazy image reflow to move the footer after a consultation jump. */
+#fb img[src="img/fb1.png"]{aspect-ratio:920/658}
+#fb img[src="img/fb2.png"]{aspect-ratio:1166/762}
+#fb img[src="img/fb3.png"]{aspect-ratio:1180/880}
+#fb img[src="img/fb4.png"]{aspect-ratio:1178/870}
+#fb img[src="img/fb5.png"]{aspect-ratio:1262/924}
+#fb img[src="img/fb6.png"]{aspect-ratio:1270/1106}
