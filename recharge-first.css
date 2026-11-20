@@ -1,0 +1,45 @@
+/* Recharge-only input-first layout. Uses the existing shared three type tiers. */
+.input-first .intro{padding:14px 0 12px;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left}
+.input-first .intro h1,.input-first .intro h1 span{font-size:var(--type-secondary)!important;line-height:1.3!important;letter-spacing:-.02em!important;margin:0}
+.input-first .intro .mobile-break,.input-first .intro>.eyebrow,.input-first .intro>p{display:none}
+.input-first .intro .providers{margin:0;gap:18px;flex-wrap:nowrap}.input-first .providers img{width:22px;height:22px}
+.input-first .workspace{grid-template-columns:180px minmax(0,1fr);gap:26px;margin-bottom:40px;max-width:1200px}
+.input-first .journey{padding:14px 0}.input-first .journey-top{display:none}.input-first .stepper li{padding-bottom:24px}
+.input-first .stepper small{margin-top:4px}.input-first .side-note{padding-top:20px}.input-first .side-note p{margin-bottom:0}
+.input-first .main-card{padding:0 24px 20px;min-height:0;border-radius:20px}
+.input-first .mode-tabs{margin-bottom:12px;gap:26px}.input-first .mode-tabs button{padding:10px 0}
+.input-first #stage{scroll-margin-top:66px}
+.input-first #stage[data-step="1"] .section-tag,.input-first #stage[data-step="2"] .section-tag,
+.input-first #stage[data-step="1"] .lead,.input-first #stage[data-step="2"] .lead{display:none}
+.input-first #stage[data-step="1"] h2,.input-first #stage[data-step="2"] h2{margin:0 0 12px}
+.input-first #code-form{display:flex;flex-direction:column}.input-first #code-form>label{order:1}.input-first #cdk{order:2}.input-first #code-form>.actions{order:3}.input-first #code-form>.caption{order:4;margin:12px 0 0}
+.input-first .field{padding:10px 12px}.input-first .actions{margin-top:12px;gap:10px 16px}.input-first .btn{padding:10px 18px}
+.input-first .bottom-hint{margin-top:18px;padding-top:14px}
+.input-first #stage[data-step="2"] .product-banner{padding:6px 10px;margin:0 0 10px;gap:8px;flex-wrap:nowrap;border-radius:10px}
+.input-first #stage[data-step="2"] .product-banner img{width:28px;height:28px}
+.input-first #stage[data-step="2"] .product-banner>div{min-width:0}
+.input-first #stage[data-step="2"] .product-banner small,.input-first #stage[data-step="2"] .verified{display:none}
+.input-first #stage[data-step="2"] .product-banner .mark{font-size:var(--type-secondary)!important;line-height:1}
+.input-first .label-row{margin-bottom:6px}.input-first .label-row label{margin:0}
+.input-first #session{display:block;height:84px;min-height:84px;padding:10px 12px;resize:vertical}
+.input-first .session-warning{margin:8px 0 0;line-height:1.5;color:var(--muted)}
+.input-first .session-tools,.input-first #session-help{margin:14px 0 0}.input-first .help-detail summary{padding:10px 12px}
+.input-first .session-tools .upload{margin:4px 12px 12px}.input-first .session-tools .upload-name{margin:0 12px}
+.input-first .session-tools .privacy{margin:0 12px 12px}.input-first .session-tools>.caption{margin:0 12px 12px}
+.input-first .assurance{margin-bottom:40px}.input-first .help{margin-bottom:28px}
+@media(min-width:1600px){.input-first .workspace{max-width:1300px;grid-template-columns:200px minmax(0,1fr);gap:40px}}
+@media(max-width:740px){
+ .input-first .intro{padding:12px 0 10px}.input-first .intro .providers{display:none}
+ .input-first .workspace{display:block;margin-bottom:30px}.input-first .journey{padding:0 0 12px}
+ .input-first .stepper{display:flex;align-items:center;justify-content:flex-start;gap:8px}
+ .input-first .stepper li{display:flex;align-items:center;gap:6px;flex:0 0 auto;padding:0;min-width:0;text-align:left}
+ .input-first .stepper li.on{flex:1}.input-first .stepper li:not(:last-child):after{display:none}
+ .input-first .stepper li:not(.on)>div{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .input-first .stepper .num{width:28px;height:28px;margin:0;line-height:1}.input-first .stepper b{white-space:nowrap;line-height:1.5}.input-first .stepper small{display:none}
+ .input-first .main-card{padding:0 16px 18px;border-radius:18px}.input-first .mode-tabs{gap:24px;margin-bottom:10px}
+ .input-first #stage[data-step="1"] h2,.input-first #stage[data-step="2"] h2{margin-bottom:10px}
+ .input-first #session{height:80px;min-height:80px}.input-first .actions{gap:8px 12px;margin-top:10px}
+ .input-first .btn{padding:9px 14px}.input-first .session-warning{margin-top:6px}
+ .input-first .session-tools,.input-first #session-help{margin-top:12px}
+}
+@media(max-height:620px) and (min-width:741px){.input-first .intro{padding:10px 0}.input-first .journey{padding-top:10px}.input-first .stepper small{display:none}.input-first .stepper li{padding-bottom:18px}.input-first .side-note{display:none}}
