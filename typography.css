@@ -32,14 +32,13 @@ body{line-height:1.65;letter-spacing:0;font-kerning:normal;font-feature-settings
 .result-card h3{line-height:1.5}.result-status{display:inline-block;vertical-align:middle;line-height:1.5}
 .product-banner{align-items:center;flex-wrap:wrap}.product-banner>div{flex:1;min-width:130px}.verified{white-space:normal}
 .label-row,.actions,.inline-actions{flex-wrap:wrap}.upload{flex-wrap:wrap;line-height:1.6}.upload span{flex:1;min-width:150px}
-.stepper b{line-height:1.5}.stepper small{line-height:1.6}
+.stepper .step-label,.step-caption{line-height:1.35}
 nav a,nav button{font-weight:500}.brand span{opacity:.7}
 @media(max-width:740px){
   :root{--type-body:16px;--type-secondary:22px;--type-title:36px}
   header .w b{white-space:nowrap}header .w nav{gap:8px}header .w nav a[href="#contact"]{padding:5px 6px}header .w .tg{margin-left:8px;width:28px}
   .hero .w{padding-top:42px}.hero .from{gap:12px 24px}.hero h1{white-space:normal}
-  .stepper{gap:4px}.stepper li{min-width:0}.stepper b{display:block;text-wrap:balance;word-break:normal;overflow-wrap:break-word}
-  .stepper .num{width:32px;height:32px;line-height:1;margin-bottom:10px}.stepper li:not(:last-child):after{top:16px}
+  .stepper{gap:0}.stepper li{min-width:0}.stepper .num{width:28px;height:28px;line-height:1;margin:0}.stepper li:not(:last-child):after{top:13px}
   .providers{gap:16px;flex-wrap:wrap}.providers>span{gap:6px}
   .compare>div{padding:18px}.preview-note{padding:16px 20px}.preview-controls{gap:8px}
   .result-cell{min-width:0}.wechat>b{word-break:break-word}.help{padding:30px 24px}
